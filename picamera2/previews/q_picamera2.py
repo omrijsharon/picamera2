@@ -84,9 +84,7 @@ def _get_qpicamera2(qt_module: _QT_BINDING):
             self.cleanup()
 
         def signal_done(self, job):
-            self.done_signal.emit(job)
-
-        def image_dimensions(self):
+            self.done_signal.emit(job)        def image_dimensions(self):
             # The dimensions of the camera images we're displaying.
             camera_config = self.picamera2.camera_config
             if camera_config and camera_config['display'] is not None:
@@ -100,6 +98,11 @@ def _get_qpicamera2(qt_module: _QT_BINDING):
                 # Otherwise pretend the image fills everything.
                 rect = self.viewport().rect()
                 size = rect.width(), rect.height()
+            
+            # Swap dimensions if transpose is active (for 90/270 degree rotations)
+            if self.transform.transpose:
+                size = (size[1], size[0])
+            
             self.image_size = size
             return size
 
@@ -132,9 +135,7 @@ def _get_qpicamera2(qt_module: _QT_BINDING):
             else:
                 # Just update it
                 self.overlay.setPixmap(pix)
-            self.fitInView()
-
-        @pyqtSlot(bool)
+            self.fitInView()        @pyqtSlot(bool)
         def set_enabled(self, enabled):
             self.enabled = enabled
 
@@ -151,10 +152,25 @@ def _get_qpicamera2(qt_module: _QT_BINDING):
             if self.keep_ar:
                 factor_x = min(factor_x, factor_y)
                 factor_y = factor_x
-            if self.transform.hflip:
-                factor_x = -factor_x
-            if self.transform.vflip:
-                factor_y = -factor_y
+            
+            # Handle transpose for 90/270 degree rotations (GPU-accelerated, zero-copy)
+            if self.transform.transpose:
+                # Determine rotation angle based on flip flags
+                # 90° = transpose + vflip, 270° = transpose + hflip
+                rotation_angle = 90 if self.transform.vflip else -90
+                self.rotate(rotation_angle)
+                # Adjust translation after rotation to center the image
+                if self.transform.vflip:
+                    self.translate(-image_w, 0)
+                else:
+                    self.translate(0, -image_h)
+            else:
+                # Apply flips only when not transposing (rotation handles these cases)
+                if self.transform.hflip:
+                    factor_x = -factor_x
+                if self.transform.vflip:
+                    factor_y = -factor_y
+            
             self.scale(factor_x, factor_y)
 
             # This scales the overlay to be on top of the camera image.
@@ -164,15 +180,30 @@ def _get_qpicamera2(qt_module: _QT_BINDING):
                 factor_x = image_w / rect.width()
                 factor_y = image_h / rect.height()
                 translate_x, translate_y = 0, 0
-                if self.transform.hflip:
-                    factor_x = -factor_x
-                    translate_x = -rect.width()
-                if self.transform.vflip:
-                    factor_y = -factor_y
-                    translate_y = -rect.height()
-                transform = QTransform.fromScale(factor_x, factor_y)
-                transform.translate(translate_x, translate_y)
-                self.overlay.setTransform(transform, True)
+                
+                # Handle overlay transformation with transpose
+                if self.transform.transpose:
+                    # For transposed images, overlay needs rotation too
+                    rotation_angle = 90 if self.transform.vflip else -90
+                    overlay_transform = QTransform()
+                    overlay_transform.rotate(rotation_angle)
+                    if self.transform.vflip:
+                        overlay_transform.translate(-rect.width(), 0)
+                    else:
+                        overlay_transform.translate(0, -rect.height())
+                    overlay_transform.scale(factor_x, factor_y)
+                    self.overlay.setTransform(overlay_transform, True)
+                else:
+                    # Original overlay transformation for non-transposed images
+                    if self.transform.hflip:
+                        factor_x = -factor_x
+                        translate_x = -rect.width()
+                    if self.transform.vflip:
+                        factor_y = -factor_y
+                        translate_y = -rect.height()
+                    transform = QTransform.fromScale(factor_x, factor_y)
+                    transform.translate(translate_x, translate_y)
+                    self.overlay.setTransform(transform, True)
 
         def resizeEvent(self, event):
             self.fitInView()
