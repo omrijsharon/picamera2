@@ -1,6 +1,7 @@
 import fcntl
 
-import videodev2
+# NOTE: `videodev2` is not available as a Python module on many Raspberry Pi
+# installs. Keep imports here lightweight so `import picamera2_contrib` works.
 
 from picamera2_contrib.platform import Platform, get_platform
 
