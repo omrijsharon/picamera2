@@ -4,7 +4,11 @@ import threading
 from enum import Enum
 from fractions import Fraction
 
-import av
+try:
+    import av  # type: ignore
+except ModuleNotFoundError:  # pragma: no cover
+    # PyAV is an optional dependency. Only audio encoding paths require it.
+    av = None  # type: ignore
 from libcamera import controls
 
 import picamera2_contrib.formats as formats
@@ -287,6 +291,11 @@ class Encoder:
 
             # Start the audio, if that's been requested.
             if self.audio:
+                if av is None:
+                    raise RuntimeError(
+                        "PyAV is required for audio encoding. Install it (for example `pip install av`) "
+                        "or set encoder.audio = False."
+                    )
                 self._audio_input_container = av.open(**self.audio_input)
                 self._audio_input_stream = self._audio_input_container.streams.get(audio=0)[0]
                 self._audio_output_container = av.open("/dev/null", 'w', format="null")
