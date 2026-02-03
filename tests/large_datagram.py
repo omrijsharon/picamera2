@@ -2,10 +2,9 @@
 
 import socket
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FileOutput
 
 Picamera2.set_logging()
 picam2 = Picamera2()

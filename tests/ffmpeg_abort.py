@@ -7,10 +7,9 @@
 import socket
 import time
 from threading import Event, Thread
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FfmpegOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FfmpegOutput
 
 
 def server():

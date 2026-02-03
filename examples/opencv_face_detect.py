@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 import cv2
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 # Grab images as numpy arrays and leave everything else to OpenCV.
 

@@ -4,8 +4,7 @@ import io
 
 import piexif
 import PIL.Image
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 # We'll save a jpeg to memory with some custom exif in it...
 mem = io.BytesIO()

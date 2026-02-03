@@ -3,8 +3,7 @@
 # Test setting the "preserve_ar" stream configuration flag
 
 import cv2
-
-from picamera2 import Picamera2, Platform
+from picamera2_contrib import Picamera2, Platform
 
 # VC4 platforms do not support different crops for the two outputs.
 if Picamera2.platform == Platform.VC4:

@@ -5,9 +5,8 @@ import numpy as np
 from pidng.core import RAW2DNG, DNGTags, Tag
 from pidng.defs import *
 from PIL import Image
-
-from picamera2 import Picamera2
-from picamera2.encoders import Encoder
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import Encoder
 
 size = (640, 360)
 picam2 = Picamera2()

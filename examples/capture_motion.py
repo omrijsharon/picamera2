@@ -3,10 +3,9 @@
 import time
 
 import numpy as np
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FileOutput
 
 lsize = (320, 240)
 picam2 = Picamera2()

@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
 # Test that the allocators don't leak
-
-from picamera2 import Picamera2
-from picamera2.allocators import (DmaAllocator, LibcameraAllocator,
+from picamera2_contrib import Picamera2
+from picamera2_contrib.allocators import (DmaAllocator, LibcameraAllocator,
                                   PersistentAllocator)
 
 for _ in range(20):

@@ -1,8 +1,7 @@
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder, JpegEncoder, MJPEGEncoder, Quality
-from picamera2.outputs import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder, JpegEncoder, MJPEGEncoder, Quality
+from picamera2_contrib.outputs import FileOutput
 
 # Not an automatic test really, just something to run to create different
 # video files that we can then eyeball for having about the claimed quality.

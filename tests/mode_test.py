@@ -7,9 +7,8 @@ import time
 from math import isclose
 
 from libcamera import Transform
-
-from picamera2 import Picamera2
-from picamera2.sensor_format import SensorFormat
+from picamera2_contrib import Picamera2
+from picamera2_contrib.sensor_format import SensorFormat
 
 Picamera2.set_logging()
 picam2 = Picamera2()

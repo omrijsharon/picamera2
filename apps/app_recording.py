@@ -3,11 +3,10 @@
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QPushButton,
                              QVBoxLayout, QWidget)
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FileOutput
-from picamera2.previews.qt import QGlPicamera2
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FileOutput
+from picamera2_contrib.previews.qt import QGlPicamera2
 
 
 def post_callback(request):

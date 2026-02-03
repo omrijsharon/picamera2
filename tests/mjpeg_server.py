@@ -11,10 +11,9 @@ import time
 import urllib.request
 from http import server
 from threading import Condition, Thread
-
-from picamera2 import Picamera2
-from picamera2.encoders import JpegEncoder
-from picamera2.outputs import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import JpegEncoder
+from picamera2_contrib.outputs import FileOutput
 
 PAGE = """\
 <html>

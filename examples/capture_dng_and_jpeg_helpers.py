@@ -3,8 +3,7 @@
 # Capture a DNG and a JPEG made from the same raw data.
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QTGL)

@@ -14,7 +14,7 @@ For FPV, framerate is MORE important than wide field of view.
 """
 
 import time
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 def calculate_crop(sensor_width, sensor_height, output_width, output_height, 
                    zoom_factor=1.0, pan_x=0.5, pan_y=0.5):

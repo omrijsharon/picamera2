@@ -2,9 +2,8 @@
 import time
 
 import cv2
-
-from picamera2 import MappedArray, Picamera2
-from picamera2.encoders import H264Encoder
+from picamera2_contrib import MappedArray, Picamera2
+from picamera2_contrib.encoders import H264Encoder
 
 picam2 = Picamera2()
 picam2.configure(picam2.create_video_configuration())

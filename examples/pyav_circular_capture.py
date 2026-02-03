@@ -3,10 +3,9 @@
 # Example using PyavOutput through a circular buffer to capture files.
 
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import CircularOutput2, PyavOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import CircularOutput2, PyavOutput
 
 picam2 = Picamera2()
 config = picam2.create_video_configuration({'size': (1280, 720), 'format': 'YUV420'})

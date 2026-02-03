@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
-from picamera2 import Picamera2
-from picamera2.devices.imx500 import IMX500
+from picamera2_contrib import Picamera2
+from picamera2_contrib.devices.imx500 import IMX500
 
 model = "/usr/share/imx500-models/imx500_network_mobilenet_v2.rpk"
 

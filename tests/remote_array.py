@@ -1,4 +1,5 @@
-from picamera2 import Picamera2, Process
+
+from picamera2_contrib import Picamera2, Process
 
 
 def run(request):

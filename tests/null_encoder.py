@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import Encoder
-from picamera2.outputs import Output
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import Encoder
+from picamera2_contrib.outputs import Output
 
 picam2 = Picamera2()
 picam2.configure()

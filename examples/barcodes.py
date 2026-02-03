@@ -2,8 +2,7 @@
 
 import cv2
 from pyzbar.pyzbar import decode
-
-from picamera2 import MappedArray, Picamera2, Preview
+from picamera2_contrib import MappedArray, Picamera2, Preview
 
 colour = (0, 255, 0)
 font = cv2.FONT_HERSHEY_SIMPLEX

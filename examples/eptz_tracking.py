@@ -19,7 +19,7 @@ you would integrate with actual object detection (OpenCV, TensorFlow, etc.)
 
 import time
 import math
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 
 class ObjectTracker:

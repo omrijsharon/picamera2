@@ -4,9 +4,8 @@ import argparse
 
 import cv2
 from pose_utils import postproc_yolov8_pose
-
-from picamera2 import MappedArray, Picamera2, Preview
-from picamera2.devices import Hailo
+from picamera2_contrib import MappedArray, Picamera2, Preview
+from picamera2_contrib.devices import Hailo
 
 parser = argparse.ArgumentParser(description='Pose estimation using Hailo')
 parser.add_argument('-m', '--model', help="HEF file path", default="/usr/share/hailo-models/yolov8s_pose_h8l_pi.hef")

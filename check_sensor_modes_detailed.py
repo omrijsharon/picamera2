@@ -3,8 +3,7 @@
 Detailed sensor mode analysis for IMX708 camera.
 Determines which modes are binned vs cropped, and analyzes ePTZ capabilities.
 """
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 import sys
 
 def analyze_sensor_modes():

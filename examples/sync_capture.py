@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 from libcamera import controls
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 # Show how to do software-synchronised capture.
 #

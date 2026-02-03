@@ -3,11 +3,10 @@ import sys
 import time
 
 import numpy as np
-
-from picamera2 import CompletedRequest, MappedArray, Picamera2
-from picamera2.devices.imx500 import IMX500, NetworkIntrinsics
-from picamera2.devices.imx500.postprocess import COCODrawer
-from picamera2.devices.imx500.postprocess_highernet import \
+from picamera2_contrib import CompletedRequest, MappedArray, Picamera2
+from picamera2_contrib.devices.imx500 import IMX500, NetworkIntrinsics
+from picamera2_contrib.devices.imx500.postprocess import COCODrawer
+from picamera2_contrib.devices.imx500.postprocess_highernet import \
     postprocess_higherhrnet
 
 last_boxes = None

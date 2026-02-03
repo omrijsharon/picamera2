@@ -2,8 +2,7 @@ import time
 
 import numpy as np
 from libcamera import Transform
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 config = picam2.create_preview_configuration()

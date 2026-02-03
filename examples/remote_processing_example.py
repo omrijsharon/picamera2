@@ -11,9 +11,8 @@ import threading
 import time
 
 import numpy as np
-
-import picamera2
-from picamera2 import Pool, RemoteMappedArray
+import picamera2_contrib
+from picamera2_contrib import Pool, RemoteMappedArray
 
 IMAGE_COUNT = 100
 
@@ -36,7 +35,7 @@ def gather_results(futures):
 
 if __name__ == "__main__":
     mp.set_start_method("spawn")
-    picam2 = picamera2.Picamera2()
+    picam2 = picamera2_contrib.Picamera2()
     config = picam2.create_preview_configuration(buffer_count=16)
 
     with Pool(run, 16, picam2) as pool:

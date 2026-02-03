@@ -19,9 +19,9 @@ Output: MP4 file with ePTZ effects applied
 """
 
 import time
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FfmpegOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FfmpegOutput
 
 
 def calculate_crop(sensor_size, output_size, zoom=1.0, pan_x=0.5, pan_y=0.5):

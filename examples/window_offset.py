@@ -3,8 +3,7 @@
 # Create a preview window at a particular location on the display.
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QTGL, x=100, y=200)

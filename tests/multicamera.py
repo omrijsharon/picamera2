@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 if len(Picamera2.global_camera_info()) <= 1:
     print("SKIPPED (one camera)")

@@ -4,10 +4,9 @@ import time
 from typing import Dict
 
 import numpy as np
-
-from picamera2 import CompletedRequest, Picamera2
-from picamera2.devices import IMX500
-from picamera2.devices.imx500 import NetworkIntrinsics
+from picamera2_contrib import CompletedRequest, Picamera2
+from picamera2_contrib.devices import IMX500
+from picamera2_contrib.devices.imx500 import NetworkIntrinsics
 
 COLOURS = np.loadtxt("assets/colours.txt")
 

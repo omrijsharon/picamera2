@@ -5,11 +5,10 @@ from typing import List
 
 import cv2
 import numpy as np
-
-from picamera2 import CompletedRequest, MappedArray, Picamera2
-from picamera2.devices import IMX500
-from picamera2.devices.imx500 import NetworkIntrinsics
-from picamera2.devices.imx500.postprocess import softmax
+from picamera2_contrib import CompletedRequest, MappedArray, Picamera2
+from picamera2_contrib.devices import IMX500
+from picamera2_contrib.devices.imx500 import NetworkIntrinsics
+from picamera2_contrib.devices.imx500.postprocess import softmax
 
 last_detections = []
 LABELS = None

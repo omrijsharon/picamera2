@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-from picamera2 import CameraConfiguration, Picamera2
+from picamera2_contrib import CameraConfiguration, Picamera2
 
 Picamera2.set_logging()
 picam2 = Picamera2()

@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 # By default we ask for raw streams, but here we test that we can also run without.
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 picam2 = Picamera2()
 

@@ -7,9 +7,8 @@
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLabel, QPushButton,
                              QVBoxLayout, QWidget)
-
-from picamera2 import Picamera2
-from picamera2.previews.qt import QPicamera2
+from picamera2_contrib import Picamera2
+from picamera2_contrib.previews.qt import QPicamera2
 
 
 def post_callback(request):
@@ -25,7 +24,7 @@ app = QApplication([])
 
 def on_button_clicked():
     button.setEnabled(False)
-    picam2.capture_request(wait=False, signal_function=qpicamera2.signal_done)
+    picam2.capture_request(wait=False, signal_function=qpicamera2_contrib.signal_done)
 
 
 def capture_done(job):
@@ -40,7 +39,7 @@ qpicamera2 = QPicamera2(picam2, width=800, height=600)
 button = QPushButton("Click to capture")
 label = QLabel()
 window = QWidget()
-qpicamera2.done_signal.connect(capture_done)
+qpicamera2_contrib.done_signal.connect(capture_done)
 button.clicked.connect(on_button_clicked)
 
 label.setFixedWidth(400)

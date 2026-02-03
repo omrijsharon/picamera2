@@ -4,8 +4,7 @@
 # CPU, but it does work with X forwarding, unlike the QtGlPreview.
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QT)

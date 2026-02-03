@@ -3,8 +3,7 @@
 import time
 
 import numpy as np
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2a = Picamera2(0)
 picam2a.configure(picam2a.create_preview_configuration())

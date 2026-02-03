@@ -1,8 +1,7 @@
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder, MJPEGEncoder
-from picamera2.outputs import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder, MJPEGEncoder
+from picamera2_contrib.outputs import FileOutput
 
 # Get Picamera2 to encode an H264 stream, and encode another MJPEG one "manually".
 

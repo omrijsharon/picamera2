@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-from picamera2 import Picamera2, Platform
+from picamera2_contrib import Picamera2, Platform
 
 picam2 = Picamera2()
 

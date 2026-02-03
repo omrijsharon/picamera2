@@ -4,10 +4,9 @@ import io
 import time
 
 from libcamera import controls
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FileOutput
 
 picam2 = Picamera2()
 ctrls = {'SyncMode': controls.rpi.SyncModeEnum.Server, 'SyncFrames': 300}

@@ -27,8 +27,7 @@ import argparse
 import cv2
 import numpy as np
 from ai_edge_litert.interpreter import Interpreter
-
-from picamera2 import MappedArray, Picamera2, Platform, Preview
+from picamera2_contrib import MappedArray, Picamera2, Platform, Preview
 
 normalSize = (1920, 1080)
 lowresSize = (640, 640)  # Shape Yolov5 s was trained with

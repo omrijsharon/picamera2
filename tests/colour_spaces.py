@@ -1,7 +1,7 @@
 from libcamera import ColorSpace
 
-import picamera2.formats as formats
-from picamera2 import Picamera2
+import picamera2_contrib.formats as formats
+from picamera2_contrib import Picamera2
 
 picam2 = Picamera2()
 

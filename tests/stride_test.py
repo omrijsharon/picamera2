@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 import time
-
-from picamera2 import MappedArray, Picamera2, libcamera
+from picamera2_contrib import MappedArray, Picamera2, libcamera
 
 
 def pre_callback(request):

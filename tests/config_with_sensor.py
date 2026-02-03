@@ -6,8 +6,7 @@
 
 # The camera mode chosen should follow the sensor configuration if that's there,
 # otherwise the raw stream configuration.
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 picam2 = Picamera2()
 

@@ -3,8 +3,7 @@
 # Switch from preview to full resolution mode (alternative method).
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QTGL)

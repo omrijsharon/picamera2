@@ -4,8 +4,7 @@
 
 import subprocess
 import time
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 picam2 = Picamera2()
 half_res = tuple([s // 2 for s in picam2.sensor_resolution])

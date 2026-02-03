@@ -4,10 +4,9 @@
 # the highest framerate and a raw bit depth of at least 10
 
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder, Quality
-from picamera2.outputs import FfmpegOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder, Quality
+from picamera2_contrib.outputs import FfmpegOutput
 
 picam2 = Picamera2()
 

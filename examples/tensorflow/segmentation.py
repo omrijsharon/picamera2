@@ -11,8 +11,7 @@ import cv2
 import numpy as np
 from ai_edge_litert.interpreter import Interpreter
 from PIL import Image
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 normalSize = (640, 480)
 lowresSize = (320, 240)

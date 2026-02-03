@@ -8,9 +8,8 @@
 import os
 
 import cv2
-
-import picamera2
-from picamera2 import Pool, RemoteMappedArray
+import picamera2_contrib
+from picamera2_contrib import Pool, RemoteMappedArray
 
 
 def init():
@@ -30,7 +29,7 @@ def save_image(request):
 
 
 if __name__ == "__main__":
-    picam2 = picamera2.Picamera2()
+    picam2 = picamera2_contrib.Picamera2()
     config = picam2.create_preview_configuration(buffer_count=8)
 
     with Pool(save_image, 8, picam2, init) as pool:

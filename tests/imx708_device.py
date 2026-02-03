@@ -1,7 +1,6 @@
 #!/bin/python3
-
-from picamera2 import Picamera2
-from picamera2.devices.imx708 import IMX708
+from picamera2_contrib import Picamera2
+from picamera2_contrib.devices.imx708 import IMX708
 
 camera_info = Picamera2.global_camera_info()
 camera_num = next((c['Num'] for c in camera_info if c['Model'] == 'imx708'), None)

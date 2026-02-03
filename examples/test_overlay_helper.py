@@ -10,8 +10,8 @@ Perfect for real-time FPV drone HUD with dynamic telemetry data.
 import time
 import random
 from libcamera import Transform
-from picamera2 import Picamera2, Preview
-from picamera2.overlay_helper import FPVOverlay
+from picamera2_contrib import Picamera2, Preview
+from picamera2_contrib.overlay_helper import FPVOverlay
 
 print("\n" + "="*60)
 print("EFFICIENT OVERLAY HELPER TEST")

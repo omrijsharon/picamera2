@@ -2,8 +2,7 @@
 
 import io
 import time
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 picam2 = Picamera2()
 capture_config = picam2.create_still_configuration()

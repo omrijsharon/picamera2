@@ -15,7 +15,7 @@ Press Ctrl+C to exit and cycle through rotations.
 
 import time
 from libcamera import Transform
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 # Test configurations
 ROTATIONS = [

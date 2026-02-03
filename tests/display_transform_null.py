@@ -2,8 +2,7 @@ import time
 
 import numpy as np
 from libcamera import Transform
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 Picamera2.set_logging()
 picam2 = Picamera2()

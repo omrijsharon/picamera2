@@ -9,8 +9,8 @@ Perfect starting point for your FPV drone project.
 
 import time
 from libcamera import Transform
-from picamera2 import Picamera2, Preview
-from picamera2.overlay_helper import FPVOverlay
+from picamera2_contrib import Picamera2, Preview
+from picamera2_contrib.overlay_helper import FPVOverlay
 
 # Setup camera
 picam2 = Picamera2()

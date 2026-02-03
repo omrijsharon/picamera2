@@ -3,9 +3,8 @@
 # Example of setting controls using the "direct" attribute method.
 
 import time
-
-from picamera2 import Picamera2, Preview
-from picamera2.controls import Controls
+from picamera2_contrib import Picamera2, Preview
+from picamera2_contrib.controls import Controls
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QTGL)

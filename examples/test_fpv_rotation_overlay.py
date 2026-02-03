@@ -8,7 +8,7 @@ Tests that overlays rotate correctly with the video.
 import time
 import numpy as np
 from libcamera import Transform
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 print("\n" + "="*60)
 print("FPV 90° ROTATION TEST WITH OVERLAY")

@@ -9,9 +9,8 @@ import threading
 
 import cv2
 import numpy as np
-
-import picamera2
-from picamera2 import MappedArray, Process, RemoteMappedArray
+import picamera2_contrib
+from picamera2_contrib import MappedArray, Process, RemoteMappedArray
 
 BLOCK_SIZE = 32
 SEARCH_SIZE = 16
@@ -88,11 +87,11 @@ def draw_motion_map(request):
 
 
 if __name__ == "__main__":
-    picam2 = picamera2.Picamera2()
+    picam2 = picamera2_contrib.Picamera2()
     config = picam2.create_preview_configuration(buffer_count=2)
     picam2.configure(config)
     picam2.post_callback = draw_motion_map
-    picam2.start_preview(picamera2.Preview.QTGL)
+    picam2.start_preview(picamera2_contrib.Preview.QTGL)
     picam2.start()
 
     process = Process(run, picam2)

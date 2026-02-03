@@ -1,6 +1,5 @@
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 wait = 5
 buffer = 1

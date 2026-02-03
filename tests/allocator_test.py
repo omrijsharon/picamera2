@@ -3,9 +3,8 @@
 # Test that the LibcameraAllocator still works, based off switch_mode example
 
 import time
-
-from picamera2 import MappedArray, Picamera2, Preview
-from picamera2.allocators import LibcameraAllocator
+from picamera2_contrib import MappedArray, Picamera2, Preview
+from picamera2_contrib.allocators import LibcameraAllocator
 
 picam2 = Picamera2()
 picam2.allocator = LibcameraAllocator(picam2.camera)

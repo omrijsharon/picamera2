@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 import time
-
-from picamera2 import CancelledError, Picamera2, TimeoutError
+from picamera2_contrib import CancelledError, Picamera2, TimeoutError
 
 # At 2 fps should take over 3s to see the first frame.
 controls = {'FrameRate': 2}

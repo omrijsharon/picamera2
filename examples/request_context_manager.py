@@ -2,8 +2,7 @@
 
 # Demonstrate use of a context manager with "captured_request()". This is convenient because
 # requests are released automatically for you.
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 with Picamera2() as picam2:
     picam2.start()

@@ -1,7 +1,6 @@
 import subprocess
 import sys
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 # First open/close several times in this process in various ways.
 

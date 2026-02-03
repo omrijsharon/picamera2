@@ -15,7 +15,7 @@ Output: 480p video from 4K sensor with digital zoom and pan
 """
 
 import time
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 # Initialize camera
 picam2 = Picamera2()

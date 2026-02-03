@@ -4,9 +4,8 @@ import numpy as np
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
                              QPushButton, QVBoxLayout, QWidget)
-
-from picamera2 import Picamera2
-from picamera2.previews.qt import QGlPicamera2
+from picamera2_contrib import Picamera2
+from picamera2_contrib.previews.qt import QGlPicamera2
 
 
 def request_callback(request):
@@ -26,7 +25,7 @@ app = QApplication([])
 def on_button_clicked():
     button.setEnabled(False)
     cfg = picam2.create_still_configuration()
-    picam2.switch_mode_and_capture_file(cfg, "test.jpg", signal_function=qpicamera2.signal_done)
+    picam2.switch_mode_and_capture_file(cfg, "test.jpg", signal_function=qpicamera2_contrib.signal_done)
 
 
 def capture_done(job):
@@ -42,16 +41,16 @@ overlay[150:, 200:] = (0, 0, 255, 64)
 
 def on_checkbox_toggled(checked):
     if checked:
-        qpicamera2.set_overlay(overlay)
+        qpicamera2_contrib.set_overlay(overlay)
     else:
-        qpicamera2.set_overlay(None)
+        qpicamera2_contrib.set_overlay(None)
 
 
 # Either camera widget implementation should work:
 # qpicamera2 = QPicamera2(picam2, width=800, height=600)
 # or:
 qpicamera2 = QGlPicamera2(picam2, width=800, height=600)
-qpicamera2.done_signal.connect(capture_done)
+qpicamera2_contrib.done_signal.connect(capture_done)
 
 button = QPushButton("Click to capture JPEG")
 button.clicked.connect(on_button_clicked)

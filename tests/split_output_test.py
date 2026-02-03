@@ -6,10 +6,9 @@
 
 import io
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import FileOutput, SplittableOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import FileOutput, SplittableOutput
 
 picam2 = Picamera2()
 config = picam2.create_video_configuration()

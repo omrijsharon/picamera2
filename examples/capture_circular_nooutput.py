@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.outputs import CircularOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.outputs import CircularOutput
 
 picam2 = Picamera2()
 fps = 30

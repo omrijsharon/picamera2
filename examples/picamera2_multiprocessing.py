@@ -197,7 +197,7 @@ class Pool:
 
 if __name__ == "__main__":
     # Simple test showing how to use the Process class.
-    from picamera2 import Picamera2
+    from picamera2_contrib import Picamera2
 
     class MyProcess(Process):
         def run(self):

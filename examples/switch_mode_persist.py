@@ -3,9 +3,8 @@
 # Switch between modes without reallocating buffers.
 
 import time
-
-from picamera2 import Picamera2
-from picamera2.allocators import PersistentAllocator
+from picamera2_contrib import Picamera2
+from picamera2_contrib.allocators import PersistentAllocator
 
 picam2 = Picamera2(allocator=PersistentAllocator())
 

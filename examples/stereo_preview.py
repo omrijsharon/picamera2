@@ -2,8 +2,7 @@
 
 import time
 from threading import Lock
-
-from picamera2 import MappedArray, Picamera2, libcamera
+from picamera2_contrib import MappedArray, Picamera2, libcamera
 
 cam2_request = None
 lock = Lock()

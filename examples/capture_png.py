@@ -3,8 +3,7 @@
 # Capture a PNG while still running in the preview mode.
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QTGL)

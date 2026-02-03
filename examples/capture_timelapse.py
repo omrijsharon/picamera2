@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import time
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 picam2 = Picamera2()
 picam2.configure("still")

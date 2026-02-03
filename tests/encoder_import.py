@@ -1,6 +1,7 @@
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
-from picamera2.platform import Platform
+
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
+from picamera2_contrib.platform import Platform
 
 encoder = H264Encoder(bitrate=1000000)
 encoder_name = encoder.__class__.__name__

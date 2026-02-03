@@ -6,9 +6,8 @@
 
 import os
 import time
-
-import picamera2
-from picamera2 import Pool
+import picamera2_contrib
+from picamera2_contrib import Pool
 
 
 def init():
@@ -24,7 +23,7 @@ def run(request):
 
 
 if __name__ == "__main__":
-    picam2 = picamera2.Picamera2()
+    picam2 = picamera2_contrib.Picamera2()
     config = picam2.create_preview_configuration(buffer_count=16)
     futures = []
 

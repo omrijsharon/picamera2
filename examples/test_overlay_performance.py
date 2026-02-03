@@ -8,7 +8,7 @@ This demonstrates why OverlayHelper is essential for low-latency FPV application
 
 import time
 import numpy as np
-from picamera2.overlay_helper import OverlayHelper
+from picamera2_contrib.overlay_helper import OverlayHelper
 
 print("\n" + "="*60)
 print("OVERLAY PERFORMANCE COMPARISON")

@@ -13,10 +13,9 @@ import OpenEXR
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow
-
-from picamera2 import Picamera2
-from picamera2.devices import IMX500
-from picamera2.devices.imx500 import (NetworkIntrinsics,
+from picamera2_contrib import Picamera2
+from picamera2_contrib.devices import IMX500
+from picamera2_contrib.devices.imx500 import (NetworkIntrinsics,
                                       postprocess_nanodet_detection)
 
 tensor_files = []
@@ -285,7 +284,7 @@ def parse_detections(metadata: dict):
             iou_thres=iou,
             max_out_dets=max_detections,
         )[0]
-        from picamera2.devices.imx500.postprocess import scale_boxes
+        from picamera2_contrib.devices.imx500.postprocess import scale_boxes
 
         boxes = scale_boxes(boxes, 1, 1, input_h, input_w, False, False)
     else:

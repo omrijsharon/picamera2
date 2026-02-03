@@ -8,8 +8,7 @@ from termios import TCIOFLUSH, tcflush
 from time import strftime
 
 from keyboard import is_pressed
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 key_flag = False
 cam = Picamera2()

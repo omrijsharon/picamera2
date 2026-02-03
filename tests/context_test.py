@@ -1,6 +1,5 @@
 import time
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 
 def main():

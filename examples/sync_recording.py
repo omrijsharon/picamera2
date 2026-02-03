@@ -3,9 +3,8 @@
 import time
 
 from libcamera import controls
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder
 
 # Show how to do software-synchronised camera recordings.
 #

@@ -3,8 +3,7 @@
 # These two are only needed for the demo code below the FrameServer class.
 import time
 from threading import Condition, Thread
-
-from picamera2 import Picamera2
+from picamera2_contrib import Picamera2
 
 
 class FrameServer:

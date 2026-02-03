@@ -24,7 +24,7 @@ This is useful for:
 """
 
 import time
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 # Try to import keyboard library for controls
 try:

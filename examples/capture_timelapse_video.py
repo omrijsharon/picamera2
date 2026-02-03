@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 import subprocess
 import time
-
-from picamera2 import Picamera2
-from picamera2.encoders import H264Encoder, Quality
-from picamera2.outputs.fileoutput import FileOutput
+from picamera2_contrib import Picamera2
+from picamera2_contrib.encoders import H264Encoder, Quality
+from picamera2_contrib.outputs.fileoutput import FileOutput
 
 
 # Define an output which divides all the timestamps by a factor

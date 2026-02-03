@@ -7,9 +7,8 @@ from threading import Thread
 
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QPushButton,
                              QVBoxLayout, QWidget)
-
-from picamera2 import Picamera2
-from picamera2.previews.qt import QGlPicamera2, QPicamera2
+from picamera2_contrib import Picamera2
+from picamera2_contrib.previews.qt import QGlPicamera2, QPicamera2
 
 if len(Picamera2.global_camera_info()) <= 1:
     print("SKIPPED (one camera)")

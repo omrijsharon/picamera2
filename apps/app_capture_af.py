@@ -5,9 +5,8 @@ from PyQt5 import QtCore
 from PyQt5.QtGui import QPalette
 from PyQt5.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
                              QPushButton, QVBoxLayout, QWidget)
-
-from picamera2 import Picamera2
-from picamera2.previews.qt import QGlPicamera2
+from picamera2_contrib import Picamera2
+from picamera2_contrib.previews.qt import QGlPicamera2
 
 STATE_AF = 0
 STATE_CAPTURE = 1
@@ -42,14 +41,14 @@ def on_button_clicked():
     af_checkbox.setEnabled(False)
     state = STATE_AF if af_checkbox.isChecked() else STATE_CAPTURE
     if state == STATE_AF:
-        picam2.autofocus_cycle(signal_function=qpicamera2.signal_done)
+        picam2.autofocus_cycle(signal_function=qpicamera2_contrib.signal_done)
     else:
         do_capture()
 
 
 def do_capture():
     cfg = picam2.create_still_configuration()
-    picam2.switch_mode_and_capture_file(cfg, "test.jpg", signal_function=qpicamera2.signal_done)
+    picam2.switch_mode_and_capture_file(cfg, "test.jpg", signal_function=qpicamera2_contrib.signal_done)
 
 
 def callback(job):
@@ -75,7 +74,7 @@ def on_continuous_toggled(checked):
 window = QWidget()
 bg_colour = window.palette().color(QPalette.Background).getRgb()[:3]
 qpicamera2 = QGlPicamera2(picam2, width=preview_width, height=preview_height, bg_colour=bg_colour)
-qpicamera2.done_signal.connect(callback, type=QtCore.Qt.QueuedConnection)
+qpicamera2_contrib.done_signal.connect(callback, type=QtCore.Qt.QueuedConnection)
 
 button = QPushButton("Click to capture JPEG")
 button.clicked.connect(on_button_clicked)

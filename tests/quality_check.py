@@ -5,10 +5,9 @@ import os
 import time
 
 import cv2
-
-from picamera2 import MappedArray, Picamera2
-from picamera2.encoders import H264Encoder, JpegEncoder, MJPEGEncoder, Quality
-from picamera2.outputs import FileOutput
+from picamera2_contrib import MappedArray, Picamera2
+from picamera2_contrib.encoders import H264Encoder, JpegEncoder, MJPEGEncoder, Quality
+from picamera2_contrib.outputs import FileOutput
 
 # Check that low quality streams come out smaller than high quality ones! This is of
 # course dependent on the images returned by the camera, but hopefully the difference

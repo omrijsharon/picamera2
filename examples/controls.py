@@ -4,8 +4,7 @@
 # to the values it has reached whereafter it will no longer change.
 
 import time
-
-from picamera2 import Picamera2, Preview
+from picamera2_contrib import Picamera2, Preview
 
 picam2 = Picamera2()
 picam2.start_preview(Preview.QTGL)
